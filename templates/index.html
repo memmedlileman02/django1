@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block page__title %}
+home
+{% endblock page__title %}
+
+{% block body %}
+  {% comment %} <h1> filmler </h1> {% endcomment %}
+  <div class="Film">
+    <h2>filmler: </h2>
+    <ul>
+        
+        {% for films in filmm %}
+            <li>
+                <h3>{{films.author}}</h3>
+                <h4>{{films.title}}</h4>
+                <p>{{films.content}}</p>
+                <small>{{films.created_date}}</small>
+            </li>
+            <hr>
+        {% endfor %}
+            
+    </ul>
+</div>
+
+  {% endblock body %}
