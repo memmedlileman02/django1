@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block page__title %}
+   Login page 
+{% endblock page__title %}
+
+{% block body %}
+    <h2>Login page</h2>
+
+    <form method ="post">
+        {% csrf_token %}
+        {{form.as_p}}  <br>
+
+        <button class ="btn">
+            Daxil ol
+        </button>
+
+    </form>
+{% endblock body %}
