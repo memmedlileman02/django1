@@ -3,7 +3,7 @@ COUNTRY_CHOICES = (
     ('AZ', 'Azerbaijan'),
     ('US', 'United States'),
     ('GB', 'United Kingdom'),
-    # Başqa ölkələri də əlavə edə bilərsiniz
+    # Başqa ölkələri də əlavə edə bilerik
 )
 
 class RegisterForm(forms.Form):
