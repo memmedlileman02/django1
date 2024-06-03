@@ -7,7 +7,8 @@ COUNTRY_CHOICES = (
 )
 
 class RegisterForm(forms.Form):
-    username = forms.CharField(max_length=30, label="İstifadəçi adı")
+    username = forms.CharField(max_length=30, label="İstifadəçi adı", widget=forms.TextInput(attrs={'class': 'username-input'}))
+
     soyad = forms.CharField(max_length=50, label="Soyad")
     finkod= forms.CharField(max_length=7)
     country = forms.ChoiceField(choices=COUNTRY_CHOICES, label="Ölkə")

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import RegisterForm,LoginForm     
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
-
+from django.contrib import messages
  
 def register__view(request):
     form = RegisterForm(request.POST or None)
@@ -15,8 +15,10 @@ def register__view(request):
         newUser.set_password(password)
         
         newUser.save()
-    
+        
         login(request, newUser)
+        messages.success(request, "Siz uğurla qeydiyyatdan keçdiniz...")
+    
 
         return redirect("home")
     
@@ -41,7 +43,7 @@ def login__view(request):
            return render(request, "login.html", context)
         
         login(request, user)
-
+        messages.success(request, "Siz uğurla qeydiyyatdan keçdiniz...")
         return redirect("home")
 
     

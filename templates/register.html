@@ -9,7 +9,39 @@
 
     <form method ="post">
         {% csrf_token %}
-        {{form.as_p}}  <br>
+        <div class="form__group">
+            <label for="{{form.username.id_for_label}}">İstifadəçi adı</label>
+            {{form.username}}
+        </div>
+
+        <div class="form__group">
+            <label for="{{form.soyad.id_for_label}}">Soyad</label>
+            {{form.soyad}}
+        </div>
+
+        <div class="form__group">
+            <label for="{{form.finkod.id_for_label}}">Fin kodu</label>
+            {{form.finkod}}
+        </div>
+
+        <div class="form__group">
+            <label for="{{form.country.id_for_label}}">Ölkə</label>
+            {{form.country}}
+        </div> 
+        
+        <div class="form__group">
+            <label for="{{form.password.id_for_label}}">Şifrə</label>
+            {{form.password}}
+        </div>
+
+        <div class="form__group">
+            <label for="{{form.confirm.id_for_label}}">Şifrəni Təsdiqlə</label>
+            {{form.confirm}}
+        </div>
+
+        
+
+        <br>
 
         <button class ="btn">
             Qeydiyyatdan kec

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'stil.css' %}">
     <title>
         {% block page__title %}
           Page
@@ -23,12 +23,22 @@
 
     <div class="nav__links">
         <ul>
-          <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'contact' %}">Contact</a></li>
-          <li><a href="{% url 'account:login' %}">Login</a></li>
-          <li><a href="{% url 'account:register' %}">Register</a></li>
-          <li><a href="{% url 'account:logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+             {% if request.user.is_authenticated %}
+                  <div class="dropdown">
+                     <button class="dropbtn">meqale</button>
+                      <div class="dropdown-content">
+                          <a href="{%url 'our-blogs'%}">meqalalerimiz</a>
+                          <a href="{%url 'my-blogs'%}">meqalelerim</a>
+                      </div>
+              </div>
+              <li><a href="{% url 'account:logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+          {% else %}
+              <li><a href="{% url 'account:login' %}">Login</a></li>
+              <li><a href="{% url 'account:register' %}">Register</a></li>
+          {% endif %}
           </ul>
         </div>
       </div>

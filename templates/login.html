@@ -10,7 +10,15 @@
 
     <form method ="post">
         {% csrf_token %}
-        {{form.as_p}}  <br>
+        <div class="form__group">
+            <label for="{{form.username.id_for_label}}">İstifadəçi adı</label>
+            {{form.username}}
+        </div>
+        <div class="form__group">
+            <label for="{{form.password.id_for_label}}">Şifrə</label>
+            {{form.password}}
+        </div>
+        <br>
 
         <button class ="btn">
             Daxil ol
