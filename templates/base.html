@@ -27,13 +27,8 @@
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
              {% if request.user.is_authenticated %}
-                  <div class="dropdown">
-                     <button class="dropbtn">meqale</button>
-                      <div class="dropdown-content">
-                          <a href="{%url 'our-blogs'%}">meqalalerimiz</a>
-                          <a href="{%url 'my-blogs'%}">meqalelerim</a>
-                      </div>
-              </div>
+               <li><a href="{%url 'filmm'%}">meqalalerimiz</a></li>
+               <li><a href="{%url 'dashboard'%}"><i class="fa-solid fa-user"></i></a></li>
               <li><a href="{% url 'account:logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
           {% else %}
               <li><a href="{% url 'account:login' %}">Login</a></li>
@@ -43,6 +38,18 @@
         </div>
       </div>
       
+
+      {% if messages %}
+      
+      {% for message in messages %}
+        {% if message.tags == "warning" %}
+            <div class="alert__warning">{{message}}</div>
+        {% else %}
+            <div class="alert__success">{{message}}</div>
+        {% endif %}
+      {% endfor %}
+        
+    {% endif %}
       
       <div class="container">
         

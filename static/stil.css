@@ -6,7 +6,7 @@
     text-decoration: none;
 }
 body{
-    background-color: blueviolet;
+    background-color: rgb(197, 160, 232);
     color: white;
     
 }
@@ -24,6 +24,7 @@ body{
     align-items: center;
     padding: 5px 10px;
     background-color: white;
+    margin-bottom: 10px;
 }
 
 .nav__logo img {
@@ -47,7 +48,9 @@ body{
     font-size: 20px;
     cursor: pointer;
 }
-
+input{
+    padding: 9px;
+}
 .btn {
     padding: 10px 20px;
     border: none;
